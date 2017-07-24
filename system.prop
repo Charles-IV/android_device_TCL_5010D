@@ -61,7 +61,7 @@ sys.ipo.disable=1
 
 #ro.operator.optr=CUST
 
-ro.sf.lcd_density=240
+ro.sf.lcd_density=220
 
 # button jack mode & switch
 persist.sys.button_jack_profile=volume
@@ -69,7 +69,7 @@ persist.sys.button_jack_switch=0
 
 persist.tone_relative_volume=100
 ro.mediatek.chip_ver=S01
-ro.mediatek.version.release=alps-mp-m0.mp1-V2.34_jhz6580.we.m_P51
+ro.mediatek.version.release=Alcatel-4034X-Android6.0
 ro.mediatek.platform=MT6580
 ro.telephony.sim.count=2
 persist.radio.default.sim=0
@@ -170,3 +170,9 @@ wfd.dummy.enable=1
 keyguard.no_require_sim=true
 persist.sys.isUsbOtgEnabled=true
 persist.debug.wfd.enable=1
+
+#config low ram device
+ro.config.low_ram=true
+
+# dual sim ui
+dualsim.ui.support=false

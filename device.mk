@@ -2,10 +2,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # The gps config appropriate for this device
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
-$(call inherit-product, device/TCL/5010D/vendor/copyfiles.mk)
-$(call inherit-product, vendor/TCL/5010D/5010D-vendor-blobs.mk)
+$(call inherit-product, device/tcl/4034X/vendor/copyfiles.mk)
+$(call inherit-product, vendor/tcl/4034X/4034X-vendor-blobs.mk)
 
-LOCAL_PATH := device/TCL/5010D
+LOCAL_PATH := device/tcl/4034X
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -14,7 +14,7 @@ PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Recovery allowed devices
-TARGET_OTA_ASSERT_DEVICE := 5010D,Pixi4-5
+TARGET_OTA_ASSERT_DEVICE := 4034_Base,4034G,4034A,4034D,4034,4034X,Pixi4-4
 
 PRODUCT_PACKAGES += \
    libxlog

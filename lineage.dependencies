@@ -1,0 +1,9 @@
+[
+  {
+    "repository": "android_kernel_tcl_4034X"
+    "target_path": "kernel/tcl/4034X"
+  },
+    "repository": "android_vendor_tcl_4034X",
+    "target_path": "vendor/tcl/4034X"
+  }
+]

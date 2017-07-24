@@ -1,6 +1,6 @@
 # mt6580 platform boardconfig
-LOCAL_PATH := device/TCL/5010D
--include vendor/TCL/5010D/BoardConfigVendor.mk
+LOCAL_PATH := device/tcl/4034X
+-include vendor/tcl/4034X/BoardConfigVendor.mk
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
@@ -42,16 +42,26 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32S1,32S1 androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --base 0x80000000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x04000000 --second_offset 0x00f00000 --tags_offset 0x0e000000
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
+#TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/kernel
 TARGET_KMODULES := true
 
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
+TARGET_KERNEL_SOURCE := kernel/tcl/4034X
+TARGET_KERNEL_ARCH := arm
+TARGET_KERNEL_HEADER_ARCH := arm
+TARGET_KERNEL_CONFIG := pixi4_4_defconfig
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+ARM_EABI_TOOLCHAIN:= $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
+KERNEL_TOOLCHAIN_PREFIX := arm-eabi-
+#TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+MTK_APPENDED_DTB_SUPPORT := yes
+BOARD_KERNEL_IMAGE_NAME := zImage-dtb
 
 # Display
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
-TARGET_SCREEN_HEIGHT := 854
+TARGET_SCREEN_HEIGHT := 800
 TARGET_SCREEN_WIDTH := 480
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
@@ -109,8 +119,8 @@ BLOCK_BASED_OTA := false
 
 # make_ext4fs requires numbers in dec format
 TARGET_USERIMAGES_USE_EXT4 := true
-BOARD_BOOTIMAGE_PARTITION_SIZE := 20971520
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 20971520
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1610612736
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 13474725888
 BOARD_CACHEIMAGE_PARTITION_SIZE := 402653184
@@ -132,7 +142,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-       device/TCL/5010D/sepolicy
+       device/tcl/4034X/sepolicy
 
 # Hack for building without kernel sources
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
