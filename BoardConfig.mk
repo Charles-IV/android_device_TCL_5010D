@@ -1,6 +1,6 @@
 # mt6580 platform boardconfig
-LOCAL_PATH := device/TCL/5010D
--include vendor/TCL/5010D/BoardConfigVendor.mk
+LOCAL_PATH := device/tcl/4034X
+-include vendor/tcl/4034X/BoardConfigVendor.mk
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
@@ -132,7 +132,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS := \
-       device/TCL/5010D/sepolicy
+       device/tcl/4034X/sepolicy
 
 # Hack for building without kernel sources
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
