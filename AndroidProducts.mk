@@ -1,3 +1,3 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/device_5010D.mk
+    $(LOCAL_DIR)/device_4034X.mk
 
