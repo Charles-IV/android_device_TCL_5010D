@@ -1,20 +1,18 @@
 #!/bin/bash
 
-echo Patch av
-cp 0001-mtk-av.patch ../../../../frameworks/av/0001-mtk-av.patch
+echo "Patch av (fix sound)"
+cp av.patch ../../../../frameworks/av/av.patch
 cd ../../../../frameworks/av
-patch -p1 <0001-mtk-av.patch
-
-echo Patch System
+patch -p1 <av.patch
 cd -
-cp ril_service.patch ../../../../system/core/ril_service.patch
-cp 0004-libnetutils-add-MTK-bits.patch ../../../../system/core/0004-libnetutils-add-MTK-bits.patch
+
+echo "Patch core (fix ril)"
+cp ril.patch ../../../../system/core/ril.patch
 cd ../../../../system/core
-patch -p1 <ril_service.patch
-patch -p1 <0004-libnetutils-add-MTK-bits.patch
-
+patch -p1 <ril.patch
 cd -
-cp bt.patch ../../../../system/bt.patch
-cd ../../../../system
-patch -p1 <bt.patch
 
+echo "Patch netd (fix tethering)"
+cp tethering.patch ../../../../system/netd/tethering.patch
+cd ../../../../system/netd
+patch -p1 <tethering.patch

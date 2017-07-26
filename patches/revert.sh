@@ -2,21 +2,18 @@
 
 echo Revert av
 cd ../../../../frameworks/av
-rm 0001-mtk-av.patch
 rm media/libmedia/mtkaudio_stubs.cpp
+rm av.patch
 git checkout .
 cd -
 
 echo Revert system
 cd ../../../../system/core
-rm 0004-libnetutils-add-MTK-bits.patch
-rm ril_service.patch
-rm libnetutils/ifc_utils.c.orig
+rm ril.patch
 git checkout .
 cd -
 
-echo Revert bt
-cd ../../../../system
-rm bt.patch 
-cd netd
+echo Revert net
+cd ../../../../system/netd
+rm tethering.patch
 git checkout .
